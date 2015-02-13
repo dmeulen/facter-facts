@@ -17,7 +17,7 @@ if Facter.value(:kernel) == 'Linux'
   end
 
   disks.each do |k,v|
-    Facter.add("disk_#{k.tr('./','')}") do
+    Facter.add("disk_by_id_#{k.tr('./','')}") do
       setcode { v }
     end
   end
